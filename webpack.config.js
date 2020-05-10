@@ -13,6 +13,15 @@ module.exports = {
         path : path.resolve(__dirname,"dist"),
         filename : "bundle.js"
     },
+    module : {
+        rules : [
+            {
+                test : /\.js|jsx$/,
+                exclude : /node_modules/,
+                use : "babel-loader"
+            }
+        ]
+    },
     plugins : [
         new HtmlWebpackPlugin({
             template : path.resolve(__dirname,"public","index.html"),
