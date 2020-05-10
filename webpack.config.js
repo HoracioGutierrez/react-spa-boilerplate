@@ -1,8 +1,6 @@
 const path = require("path")
 require("dotenv").config()
 
-console.log(process.env.mode)
-
 module.exports = {
     target : "web",
     mode : process.env.mode || "development",
