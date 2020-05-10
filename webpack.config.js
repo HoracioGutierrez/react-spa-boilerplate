@@ -4,6 +4,9 @@ require("dotenv").config()
 
 module.exports = {
     target : "web",
+    devServer : {
+        open : true
+    },
     mode : process.env.mode || "development",
     entry : path.resolve(__dirname,"src","index.js"),
     output : {
