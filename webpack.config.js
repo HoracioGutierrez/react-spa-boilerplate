@@ -1,5 +1,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 require("dotenv").config()
 
 module.exports = {
@@ -22,6 +24,10 @@ module.exports = {
                 test : /\.js|jsx$/,
                 exclude : /node_modules/,
                 use : "babel-loader"
+            },
+            {
+                test : /\.less$/,
+                use : [MiniCssExtractPlugin.loader,"css-loader","less-loader"]
             }
         ]
     },
@@ -33,6 +39,7 @@ module.exports = {
                 removeComments : true,
                 collapseWhitespace : true
             }
-        })
+        }),
+        new MiniCssExtractPlugin({})
     ]
 }
