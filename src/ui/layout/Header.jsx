@@ -1,15 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Nav from './Nav'
 
 const Header = () => {
     return (
-        <header>
+        <header id="layout-header">
             <h1>React SPA</h1>
-            <nav>
-                <NavLink to="/wall">wall</NavLink>
-                <NavLink to="/messages">messages</NavLink>
-                <NavLink to="/profile">profile</NavLink>
-            </nav>
+            <Nav id="desktop-nav"/>
         </header>
     )
 }
