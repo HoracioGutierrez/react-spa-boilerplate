@@ -1,10 +1,21 @@
 @primary : #3f51b5;
 @primary-dark : #002984;
+@primary-light : #757de8;
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html , body , #root {
+    height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -93,4 +104,17 @@ a {
             color: white;
         }
     }
+}
+
+#layout-main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+
+#layout-footer {
+    padding: 0.5rem;
+    background-color: @primary-light;
+    color: white;
+    text-align: center;
 }

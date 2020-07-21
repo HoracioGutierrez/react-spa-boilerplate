@@ -7,7 +7,7 @@ import Profile from '../pages/Profile'
 
 const Main = () => {
     return (
-        <main>
+        <main id="layout-main">
             <Switch>
                 <Route path="/" component={Home} exact/>
                 <Route path="/wall" component={Wall} exact/>
