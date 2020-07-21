@@ -1,11 +1,8 @@
 import React from 'react'
 
-const Wall = () => {
-    return (
-        <div>
-        wall  
-        </div>
-    )
-}
+const Wall = () => 
+    <div>
+    wall  
+    </div>
 
 export default Wall
