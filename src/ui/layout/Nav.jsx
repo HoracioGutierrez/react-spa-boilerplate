@@ -1,11 +1,16 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { toggleDrawer } from "../../api/actions"
 
-const Nav = ({id}) => 
+const Nav = ({id,toggleDrawer}) => 
     <nav id={id}>
-        <NavLink to="/wall">wall</NavLink>
-        <NavLink to="/messages">messages</NavLink>
-        <NavLink to="/profile">profile</NavLink>
+        <NavLink to="/wall" onClick={id==="drawer-nav"?toggleDrawer:undefined}>wall</NavLink>
+        <NavLink to="/messages" onClick={id==="drawer-nav"?toggleDrawer:undefined}>messages</NavLink>
+        <NavLink to="/profile" onClick={id==="drawer-nav"?toggleDrawer:undefined}>profile</NavLink>
     </nav>
 
-export default Nav
+export default connect(null,dispatch=>({
+    toggleDrawer : bindActionCreators(toggleDrawer,dispatch)
+}))(Nav)
